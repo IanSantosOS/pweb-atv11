@@ -14,4 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(router);
 
+app.use((req, res, next) => {
+  res.status(404).render('404');
+});
+
 app.listen(PORT, () => console.log(`\n\x1b[43;1m Funcionou!!! \x1b[0m Servidor está rodando no \x1b[4m${HOST}:${PORT}\x1b[0m\n`));
