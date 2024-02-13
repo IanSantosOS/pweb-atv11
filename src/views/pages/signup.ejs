@@ -2,13 +2,47 @@
 <html lang="pt-br">
 <head>
   <%- include('../partials/head') %>
-  <link rel="stylesheet" href="css/.css">
+  <link rel="stylesheet" href="css/login_signup.css">
   <title>Sign Up</title>
 </head>
 
-<body>
-  <h1>Sign Up</h1>
+<body data-bs-theme="dark">
 
-  <script src="js/.js"></script>
+  <div class="box">
+    <h1>Sign Up</h1>
+
+    <form action="/login" method="post" class="">
+      <p class="error">* <span id="error-username"></span></p>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="username" name="username" placeholder="name" autocomplete="off" autofocus required>
+        <label for="username">Nome de Usuário</label>
+      </div>
+
+      <p class="error">* <span id="error-email"></span></p>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" autocomplete="off">
+        <label for="email">Email</label>
+      </div>
+
+      <p class="error">* <span id="error-pass"></span></p>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="pass" name="pass" placeholder="senha123" autocomplete="off" required>
+        <label for="pass">Senha</label>
+      </div>
+
+      <p class="error">* <span id="error-pass-confirm"></span></p>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="pass_confirm" name="pass_confirm" placeholder="senha123" autocomplete="off" required>
+        <label for="pass_confirm">Confirme a sua Senha</label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-danger">Enviar</button>
+      </div>
+    </form>
+    <p>Já tem uma conta? <a href="/login">Entre Aqui</a></p>
+  </div>
+
+  <script src="js/signup.js"></script>
 </body>
 </html>

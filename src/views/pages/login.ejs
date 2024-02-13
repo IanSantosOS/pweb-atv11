@@ -2,13 +2,35 @@
 <html lang="pt-br">
 <head>
   <%- include('../partials/head') %>
-  <link rel="stylesheet" href="css/.css">
+  <link rel="stylesheet" href="css/login_signup.css">
   <title>Log In</title>
 </head>
 
-<body>
-  <h1>Log In</h1>
+<body data-bs-theme="dark">
 
-  <script src="js/.js"></script>
+  <div class="box">
+    <h1>Log In</h1>
+    <p class="error">* <span id="error-message"></span></p>
+
+    <form>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="username_email" name="username_email" placeholder="name ou name@example.com" autocomplete="off" autofocus required>
+        <label for="username_email">Nome de Usuário ou Email</label>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control form-control-danger" id="pass" name="pass" placeholder="Senha" autocomplete="off" required>
+        <label for="pass">Senha</label>
+      </div>
+
+      <div class="d-grid mt-2">
+        <button type="submit" class="btn btn-danger">Enviar</button>
+      </div>
+    </form>
+
+    <p>Não tem uma conta? <a href="/signup">Cadastre-se</a></p>
+  </div>
+
+  <script src="js/login.js"></script>
 </body>
 </html>
