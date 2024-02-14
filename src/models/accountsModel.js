@@ -7,22 +7,29 @@ const accounts = [
   { username: 'ricardo', role: 'user',  email: 'ricardo@gmail.com', pass: 'A1B2C3' }
 ];
 
+const getAll = () => {
+  return {
+    users: accounts.map(({username, role, email}) => {
+      return { username, role, email }
+    })
+  }
+}
+
 const createUser = (newUser) => {
   accounts.push(newUser);
 };
 
-const deleteUser = (user) => {
-  accounts.splice(1, accounts.indexOf(account => {
-    const userValue = user?.username ? account.username === user.username : account.email === user.email;
-    return userValue && account.pass === user.pass;
-  }));
+const deleteUser = (username) => {
+  const userIndex = accounts.findIndex(account => account.username.toLowerCase() === username.toLowerCase());
+  accounts.splice(userIndex, 1);
 };
 
 const verifyUser = ({ username_email, pass }) => {
   username_email = username_email.toLowerCase();
+
   return accounts.find(account => {
     return account.pass === pass &&
-    (account.username.toLowerCase() === username_email || account.email.toLowerCase() === username_email)
+    ( account.username.toLowerCase() === username_email || account.email.toLowerCase() === username_email );
   });
 };
 
@@ -39,5 +46,6 @@ module.exports = {
   deleteUser,
   verifyUser,
   hasUsername,
-  hasEmail
+  hasEmail,
+  getAll
 };

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <%- include('../partials/head') %>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cafelândia</title>
+</head>
+
+<body data-bs-theme="dark">
+
+  <h1>Welcome, <%= username %> :)</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">User</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Delete</th>
+      </tr>
+      <tbody></tbody>
+    </thead>
+  </table>
+
+  <script>
+    const tbody = document.querySelector('tbody');
+    getAllUsers();
+
+    function deleteUser(username) {
+      fetch(`/adm/delete/${username}`, { method: 'DELETE' })
+        .then(res => res.json())
+        .then(res => {
+          if (res?.message) {
+            alert(res.message);
+          }
+        });
+
+      getAllUsers();
+    }
+
+    function getAllUsers() {
+      for (let i = tbody.rows.length - 1; i >= 0; i--) {
+        tbody.deleteRow(i);
+      }
+
+      fetch('/adm/users')
+        .then(res => res.json())
+        .then(data => {
+          for (const user of data.users) {
+            const btnDelete = document.createElement('button');
+            btnDelete.classList ='btn btn-danger';
+            btnDelete.innerText = 'Delete User';
+            btnDelete.addEventListener('click', () => deleteUser(user.username));
+
+            const tr = tbody.insertRow();
+            tr.insertCell(0).innerText = user.username;
+            tr.insertCell(1).innerText = user.email;
+            tr.insertCell(2).innerText = user.role;
+            tr.insertCell(3).appendChild(btnDelete);
+          }
+        });
+    }
+  </script>
+</body>
+</html>

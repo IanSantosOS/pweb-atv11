@@ -13,7 +13,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   if (req?.session?.login) {
-    res.redirect('homepage');
+    res.redirect('/homepage');
   } else {
     res.render('signup');
   }
@@ -21,9 +21,21 @@ router.get('/signup', (req, res) => {
 
 router.get('/homepage', (req, res) => {
   if (!req?.session?.login) {
-    res.redirect('login');
-  } else {
+    res.redirect('/login');
+  }
+  else if (req?.session?.login?.role === 'admin') {
+    res.redirect('/lista');
+  }
+  else {
     res.render('homepage', { username: req.session.login.username });
+  }
+});
+
+router.get('/lista', (req, res) => {
+  if (req?.session?.login?.role !== 'admin') {
+    return res.status(403).json();
+  } else {
+    return res.render('userList', { username: req.session.login.username });
   }
 });
 

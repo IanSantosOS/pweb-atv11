@@ -1,11 +1,21 @@
 const accountsModel = require('../models/accountsModel');
 
 const createUser = ({ body }, res) => {
-  accountsModel.createUser({ username: body.username, email: body.email, pass: body.pass })
+  accountsModel.createUser({
+    username: body.username,
+    role: 'user',
+    email: body.email.toLowerCase(),
+    pass: body.pass
+  });
   return res.status(204).json();
 };
 
-const deleteUser = ({ body }, res) => {
+const getAll = (_req, res) => {
+  return res.status(200).json(accountsModel.getAll());
+}
+
+const deleteUser = (req, res) => {
+  accountsModel.deleteUser(req.params.user);
   return res.status(204).json();
 };
 
@@ -23,5 +33,6 @@ const loginUser = (req, res) => {
 module.exports = {
   createUser,
   deleteUser,
-  loginUser
+  loginUser,
+  getAll
 };

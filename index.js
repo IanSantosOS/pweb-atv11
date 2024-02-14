@@ -22,6 +22,7 @@ app.use(session({
 
 app.use('/', require('./src/routes/pages'));
 app.use('/auth', require('./src/routes/auth'));
+app.use('/adm', require('./src/routes/adm'));
 
 app.use((req, res, next) => res.status(404).render('404'));
 
