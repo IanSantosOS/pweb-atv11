@@ -37,13 +37,13 @@ Obs: onde estiver flags como (ideia minha), são coisas que foram minhas ideias 
 
 ### Página de Administrador (Ideia Minha)
 
-- [ ] Só pode ser acessado por adms (ideia minha)
-- [ ] Lista com todos os usuários e seus emails
-- [ ] Botão para excluir usuários
+- [x] Só pode ser acessado por adms (ideia minha)
+- [x] Lista com todos os usuários e seus emails
+- [x] Botão para excluir usuários
 
 ## Dependências e Frameworks
 
-|                         Site da Dependência ou Framework | Motivo da utilização                       |
+|                       Site das Dependências e Frameworks | Motivo da utilização                       |
 | -------------------------------------------------------: | :----------------------------------------- |
 |                   [Bootstrap](https://getbootstrap.com/) | Framework de Estilização                   |
 | [Validator](https://github.com/validatorjs/validator.js) | Fazer validações de forma simples          |
