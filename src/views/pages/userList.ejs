@@ -2,11 +2,18 @@
 <html lang="pt-br">
 <head>
   <%- include('../partials/head') %>
+  <link rel="stylesheet" href="css/template.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Cafelândia</title>
 </head>
 
 <body data-bs-theme="dark">
+
+  <div class="template-container">
+    <%- include('../partials/alert') %>
+  </div>
+  
+  <div class="alert-container"></div>
 
   <h1>Welcome, <%= username %> :)</h1>
 
@@ -23,6 +30,8 @@
   </table>
 
   <script>
+    const templateContainer = document.querySelector('.template-container');
+    const alertContainer = document.querySelector('.alert-container');
     const tbody = document.querySelector('tbody');
     getAllUsers();
 
@@ -31,7 +40,11 @@
         .then(res => res.json())
         .then(res => {
           if (res?.message) {
-            alert(res.message);
+            if (alertContainer.children.length < 3) {
+              const newAlert = templateContainer.querySelector('.alert').cloneNode(true);
+              newAlert.querySelector('.alert-message').innerText = res.message;
+              alertContainer.appendChild(newAlert)
+            }
           }
         });
 

@@ -2,15 +2,21 @@
 <html lang="pt-br">
 <head>
   <%- include('../partials/head') %>
+  <link rel="stylesheet" href="css/template.css">
   <link rel="stylesheet" href="css/login_signup.css">
   <title>Log In</title>
 </head>
 
 <body data-bs-theme="dark">
 
+  <div class="template-container">
+    <%- include('../partials/alert') %>
+  </div>
+  
+  <div class="alert-container"></div>
+
   <div class="box">
     <h1>Log In</h1>
-    <p class="error">* <span id="error-message"></span></p>
 
     <form>
       <div class="form-floating mb-3">

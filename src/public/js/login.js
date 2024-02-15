@@ -1,8 +1,6 @@
 const form = document.querySelector('form');
-const error = document.querySelector('.error');
-const errorMessage = document.querySelector('#error-message');
-const username_email = document.querySelector('#username_email');
-const pass = document.querySelector('#pass');
+const templateContainer = document.querySelector('.template-container');
+const alertContainer = document.querySelector('.alert-container');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -25,8 +23,11 @@ form.addEventListener('submit', (e) => {
     .catch(err => err.message = "")
     .then(res => {
       if (res?.message) {
-        error.style.opacity = 1;
-        errorMessage.innerText = res.message;
+        if (alertContainer.children.length < 3) {
+          const newAlert = templateContainer.querySelector('.alert').cloneNode(true);
+          newAlert.querySelector('.alert-message').innerText = res.message;
+          alertContainer.appendChild(newAlert)
+        }
         pass.value = "";
         username_email.focus();
       }

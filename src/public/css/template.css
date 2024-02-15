@@ -1,0 +1,19 @@
+.template-container {
+  display: none;
+}
+
+.alert-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 1em;
+}
+
+.alert {
+  z-index: 5;
+  min-width: 0;
+  max-width: 30em;
+  width: 100%;
+}

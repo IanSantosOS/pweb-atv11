@@ -1,9 +1,6 @@
 const form = document.querySelector('form');
-const errors = document.querySelectorAll('.error');
-const errorUsername = document.querySelector('#error-username');
-const errorEmail = document.querySelector('#error-email');
-const errorPass = document.querySelector('#error-pass');
-const errorPassConfirm = document.querySelector('#error-pass-confirm');
+const templateContainer = document.querySelector('.template-container');
+const alertContainer = document.querySelector('.alert-container');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -25,9 +22,8 @@ form.addEventListener('submit', (e) => {
     .then(res => res.json())
     .catch(err => err.message = "")
     .then(res => {
-      clearErrorsAlert();
-
       if (res?.message) {
+        alertContainer.innerHTML = '';
         errorMessages(res.message);
       }
       else {
@@ -36,35 +32,10 @@ form.addEventListener('submit', (e) => {
     });
 });
 
-function clearErrorsAlert() {
-  errorUsername.innerText = '';
-  errorEmail.innerText = '';
-  errorPass.innerText = '';
-  errorPassConfirm.innerText = '';
-  
-  errors.forEach(error => {
-    error.style.opacity = 0;
-  });
-}
-
-function errorMessages(msg) {
-
-  if (msg?.username) {
-    errorUsername.innerText = msg.username;
+function errorMessages(msgObj) {
+  for (let errorMsg in msgObj) {
+    const newAlert = templateContainer.querySelector('.alert').cloneNode(true);
+    newAlert.querySelector('.alert-message').innerText = msgObj[errorMsg];
+    alertContainer.appendChild(newAlert);
   }
-  if (msg?.email) {
-    errorEmail.innerText = msg.email;
-  }
-  if (msg?.pass) {
-    errorPass.innerText = msg.pass;
-  }
-  if (msg?.pass_confirm) {
-    errorPassConfirm.innerText = msg.pass_confirm;
-  }
-
-  errors.forEach(error => {
-    if (error.querySelector("span").innerText !== '') {
-      error.style.opacity = 1;
-    }
-  });
 }
