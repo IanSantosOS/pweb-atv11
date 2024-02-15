@@ -6,41 +6,6 @@ Criação de uma aplicação web simples com login e senha através do framework
 
 ![Imagem da Estrutura do Projeto](image.png)
 
-## Páginas Checklist (Será apagado após a conclusão do projeto)
-
-Obs: onde estiver flags como (ideia minha), são coisas que foram minhas ideias e não eram exatamente requisitos do projeto.
-
-### Página Inicial (ideia minha)
-
-- [x] Link para login
-- [x] Link para cadastro
-
-### Login
-
-- [x] Mensagem de erro
-- [x] Usuário ou Email (usuário foi ideia minha)
-- [x] Senha
-- [x] Enviar para a Homepage após o login ser um sucesso
-
-### Sign up
-
-- [x] Mensagem de erro
-- [x] Nome de Usuário (ideia minha)
-- [x] Email
-- [x] Senha
-- [x] Confirmação de Senha
-- [x] Enviar para a Login após o cadastro ser um sucesso
-
-### Página de Perfil do Usuário
-
-- Ainda a ser pensado
-
-### Página de Administrador (Ideia Minha)
-
-- [x] Só pode ser acessado por adms (ideia minha)
-- [x] Lista com todos os usuários e seus emails
-- [x] Botão para excluir usuários
-
 ## Dependências e Frameworks
 
 |                       Site das Dependências e Frameworks | Motivo da utilização                       |
