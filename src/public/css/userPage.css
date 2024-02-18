@@ -1,5 +1,23 @@
-.carousel {
-  overflow: hidden;
-  height: 35rem;
-  
+nav {
+  box-shadow: 0 0 2em #330000;
+}
+
+.background {
+  background-image: url(/img/nether-1.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  /* height: calc(50vh + 15vw); */
+  width: 100%;
+  box-shadow: 0 0 5em 3em #770000;
+  margin-bottom: 4em;
+  /* mask-image: linear-gradient(#000, transparent); */
+}
+
+@media screen and (max-width: 800px) {
+  .background {
+    height: calc(50vh + 15vw);
+  }
 }
