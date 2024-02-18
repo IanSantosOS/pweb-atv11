@@ -1,0 +1,30 @@
+footer {
+  background-image: url(/img/netherrack.webp);
+  background-size: 60em;
+  background-repeat: repeat-x;
+  filter: brightness(.8);
+  width: 100%;
+  padding: 2em;
+  gap: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer>div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer img {
+  max-width: 10em;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: .4em;
+  line-height: 3em;
+}
+
+footer p {
+  text-align: justify;
+}
