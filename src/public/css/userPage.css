@@ -1,5 +1,5 @@
 nav {
-  box-shadow: 0 0 2em #330000;
+  box-shadow: 0 0 2em #220000;
 }
 
 .background {
@@ -9,11 +9,83 @@ nav {
   background-position: center;
   background-size: cover;
   height: 100vh;
-  /* height: calc(50vh + 15vw); */
   width: 100%;
   box-shadow: 0 0 5em 3em #770000;
   margin-bottom: 4em;
+  display: grid;
+  place-items: center;
   /* mask-image: linear-gradient(#000, transparent); */
+}
+
+.background p {
+  user-select: none;
+  color: #330000;
+  font-size: 13vw;
+  font-style: italic;
+  opacity: .7;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#sobre>div {
+  min-width: 500px;
+  flex: 1;
+}
+
+#sobre img {
+  width: 20em;
+  height: max-content;
+  border-radius: 1em;
+  box-shadow: 0 0 1em 1em #222;
+}
+
+.carousel-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card .img {
+  background-repeat: no-repeat;
+  background-size: auto 15em;
+  border-radius: 5px 0 0 5px;
+}
+
+#hunger-games {
+  background-image: url(/img/hunger-games.jpg);
+  background-position: 50%;
+}
+
+#sky-wars {
+  background-image: url(/img/skywars.jpg);
+  background-position: 50%;
+}
+
+#boss-battle {
+  background-image: url(/img/the-end-2.jpg);
+  background-position: 37%;
+}
+
+#tnt-run {
+  background-image: url(/img/tnt-run.jpg);
+  background-position: 50%;
+}
+
+#pvp {
+  background-image: url(/img/pvp.jpg);
+  background-position: 50%;
+}
+
+#one-vs-one {
+  background-image: url(/img/arena-1v1.jpeg);
+  background-position: 45%;
+}
+
+#cassino-img {
+  background-image: url(/img/cassino.webp);
+  background-position: 65% 0%;
+  height: 20rem;
+  width: 100%;
+  border-radius: 1em;
 }
 
 @media screen and (max-width: 800px) {

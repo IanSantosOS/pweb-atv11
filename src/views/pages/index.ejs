@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="dark">
 <head>
   <%- include('../partials/head') %>
   <link rel="stylesheet" href="css/userPage.css">
   <title>Blaze Rod</title>
 </head>
 
-<body data-bs-theme="dark">
-  <nav id="navbar" class="navbar navbar-expand-lg bg-dark border-bottom sticky-top">
+<body>
+
+  <nav id="navbar" class="navbar navbar-expand-lg bg-dark border-bottom position-sticky top-0 z-3">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="">
-        <img src="/img/blaze-rod.png" alt="Brand Logo" class="me-2" width="32">
+        <img src="/img/blaze-rod.png" aria-hidden="true" class="me-2" width="32">
         Blaze Rod
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-location" aria-controls="navbar-location" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,9 +35,9 @@
     </div>
   </nav>
 
-  <main>
-    <%- include('../partials/userPageContent') %>
-  </main>
+  <div>
+    <%- include('../partials/userPageContent', { msg: '' }) %>
+  </div>
 
 </body>
 </html>
