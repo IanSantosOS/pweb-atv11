@@ -6,7 +6,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const login = {
-    username_email: username_email.value,
+    username_email: username_email.value.trim(),
     pass: pass.value
   };
 
