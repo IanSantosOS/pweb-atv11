@@ -6,7 +6,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const signup = {
-    username: username.value,
+    username: username.value.trimEnd(),
     email: email.value,
     pass: pass.value,
     pass_confirm: pass_confirm.value
