@@ -4,7 +4,7 @@ const session = require('express-session');
 const app = express();
 
 const HOST = 'http://localhost';
-const PORT = 80;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.set('views', 'views/pages');
