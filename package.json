@@ -2,7 +2,7 @@
   "name": "pweb-atv11",
   "version": "1.0.0",
   "description": "Criação de uma aplicação web simples com login e senha através do framework express.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
     "dev": "node --watch ./bin/www"
