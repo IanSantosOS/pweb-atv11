@@ -1,9 +1,6 @@
-const cookieParser = require('cookie-parser');
-const createError = require('http-errors');
-const path = require('path');
-
 const express = require('express');
 const session = require('express-session');
+const path = require('path');
 
 const app = express();
 
@@ -13,7 +10,6 @@ app.set('view engine', 'ejs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
 app.use(session({
   secret: '68f26e35bb62bf0521606b4d912b062dae5c6b932deb999680a031db8bc9c58e',
